@@ -1,4 +1,4 @@
-# http://boxstarter.org/package/nr/url?https://gist.github.com/ChaseFlorell/7832733/raw/43a1736791abb6b01aeb8287c27a8cce80e01838/Chase.Dev.AppsOnly.ps1
+# http://boxstarter.org/package/nr/url?
 
 $invocation = (Get-Variable MyInvocation).Value
 $currentDirectory = Split-Path $invocation.MyCommand.Path
