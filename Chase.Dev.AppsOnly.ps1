@@ -59,9 +59,6 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
     # Don't quite know why this is important, but I'll install silverlight and java runtime anyways
     cinstm Silverlight
     cinstm javaruntime
-
-    # Skydrive is a must for sync'ed data. Prefered over Dropbox IMO
-    cinstm skydrive
     cinstm evernote
     
     # Gotta have Fiddler
