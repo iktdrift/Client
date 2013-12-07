@@ -29,7 +29,7 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
     # Install-WindowsUpdate -AcceptEula
     Update-ExecutionPolicy Unrestricted
     Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
-    Enable-RemoteDesktop
+    #Enable-RemoteDesktop
 
 #endregion
 
