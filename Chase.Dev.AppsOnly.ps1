@@ -31,8 +31,6 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
     Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
     Enable-RemoteDesktop
 
-    Enable-RemoteDesktop
-
 #endregion
 
 #region Add some windows extras
@@ -97,6 +95,6 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
     # Fix SSH-Agent error by adding the bin directory to the `Path` environment variable
     Add-PathEnvironmentVariable "C:\Program Files (x86)\Git\bin"
 
-# Markdown is how documentation becomes awesomenes
-# Unfortunately I'm installing this at the end because it doesn't seem to work unattended... it requires the user to press "ok"
-cinstm MarkdownPad2 -installargs "/exelang 1033"
+    # Markdown is how documentation becomes awesomenes
+    # Unfortunately I'm installing this at the end because it doesn't seem to work unattended... it requires the user to press "ok"
+    cinstm MarkdownPad2 -installargs "/exelang 1033"
