@@ -26,9 +26,11 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
 
 #region Initial Windows Config
 
-    Install-WindowsUpdate -AcceptEula
+    # Install-WindowsUpdate -AcceptEula
     Update-ExecutionPolicy Unrestricted
-    Set-ExplorerOptions -showFileExtensions
+    Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
+    Enable-RemoteDesktop
+
     Enable-RemoteDesktop
 
 #endregion
@@ -70,6 +72,7 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
     # Editors and merge tools
     cinstm notepadplusplus.install
     cinstm nano
+    cinst sublimetext2
     
     # Without Git, we might as well go home.
     cinstm poshgit
