@@ -75,6 +75,9 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
 
     # Life sux without Visual Studio and the awesome extensions
     cinstm VisualStudio2012Professional
+    
+    # Mono is needed for Xamarin goodness.
+    cinstm mono
 
     # Run Visual Studio Update
     if((Get-Item "$($Boxstarter.programFiles86)\Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe").VersionInfo.ProductVersion -lt "11.0.60115.1") {
@@ -90,8 +93,11 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
     Install-ChocolateyVsixPackage "TextHighlighterExtension2012" http://visualstudiogallery.msdn.microsoft.com/fd129629-a1a1-417c-ac80-c9ac7a67b968/file/93334/9/TextHighlighterExtension2012.vsix 11
 
     # Fix SSH-Agent error by adding the bin directory to the `Path` environment variable
-    Add-PathEnvironmentVariable "C:\Program Files (x86)\Git\bin"
+    $env:PSModulePath = $env:PSModulePath + ";C:\Program Files (x86)\Git\bin"
 
     # Markdown is how documentation becomes awesomenes
     # Unfortunately I'm installing this at the end because it doesn't seem to work unattended... it requires the user to press "ok"
     cinstm MarkdownPad2 -installargs "/exelang 1033"
+    
+    # VPN Client 
+    cinstm ShrewSoftVpn
