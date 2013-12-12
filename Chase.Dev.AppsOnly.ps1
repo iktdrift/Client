@@ -76,6 +76,9 @@ $currentDirectory = Split-Path $invocation.MyCommand.Path
     # Life sux without Visual Studio and the awesome extensions
     cinstm VisualStudio2012Professional
     
+    # Get rid of upper case menu in Visual Studio
+    Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\11.0\General -Name SuppressUppercaseConversion -Type DWord -Value 1 
+    
     # Mono is needed for Xamarin goodness.
     cinstm mono
 
