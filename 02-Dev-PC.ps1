@@ -1,52 +1,5 @@
-# http://boxstarter.org/package/nr/url?
+# http://boxstarter.org/package/url?
 
-$invocation = (Get-Variable MyInvocation).Value
-$currentDirectory = Split-Path $invocation.MyCommand.Path
-
-#endregion
-
-#region Setup user environment
-
-    # Create a Skydrive directory this will be the new user home directory
-    # this is being done early in the process so that it can be used to store 
-    # the boxstarter-settings.xml document
-    if(!(Test-Path -PathType Container $Home\SkyDrive\Documents)){
-        Write-Host "Creating a SkyDrive directory for use as $env:username`'s Documents folder."
-        New-Item "$HOME\SkyDrive\Documents" -type Directory
-    } 
-
-    # Move the Library directory to Skydrive
-    Move-LibraryDirectory "Personal" "$HOME\SkyDrive\Documents"
-
-
-#####################
-# BEGIN CONFIGURATION
-#####################
-
-
-#region Initial Windows Config
-
-    # Install-WindowsUpdate -AcceptEula
-    Update-ExecutionPolicy Unrestricted
-    Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
-    #Enable-RemoteDesktop
-
-#endregion
-
-#region Add some windows extras
-    cinst IIS-WebServerRole -source windowsfeatures
-    cinst TelnetClient -source windowsFeatures
-    cinst IIS-HttpCompressionDynamic -source windowsfeatures
-    cinst IIS-ManagementScriptingTools -source windowsfeatures
-    cinst IIS-WindowsAuthentication -source windowsfeatures
-#endregion
-
-#region Install Apps via Chocolatey `> cinstm appname`
-
-    # Let's get the latest version of powershell and .net frameworks
-    cinstm PowerShell
-    cinstm DotNet4.0
-    cinstm DotNet4.5
 
     # It's nice to be able to browse NuGet files if necessary
     cinstm NugetPackageExplorer
