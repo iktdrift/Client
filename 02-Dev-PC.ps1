@@ -53,4 +53,4 @@
     cinstm MarkdownPad2 -installargs "/exelang 1033"
     
     # VPN Client 
-    cinstm ShrewSoftVpn
+    # cinstm ShrewSoftVpn
