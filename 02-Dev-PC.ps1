@@ -31,9 +31,6 @@
     
     # Get rid of upper case menu in Visual Studio
     Set-ItemProperty -Path HKCU:\Software\Microsoft\VisualStudio\11.0\General -Name SuppressUppercaseConversion -Type DWord -Value 1 
-    
-    # Mono is needed for Xamarin goodness.
-    cinstm mono
 
     # Run Visual Studio Update
     if((Get-Item "$($Boxstarter.programFiles86)\Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe").VersionInfo.ProductVersion -lt "11.0.60115.1") {

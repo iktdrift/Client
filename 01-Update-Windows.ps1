@@ -21,9 +21,9 @@
     cinst IIS-WindowsAuthentication -source windowsfeatures
 #endregion
 
-#region Install Apps via Chocolatey `> cinstm appname`
 
-    # Let's get the latest version of powershell and .net frameworks
-    cinstm PowerShell
-    cinstm DotNet4.0
-    cinstm DotNet4.5
+# Let's get the latest version of powershell and .net frameworks
+cinstm PowerShell
+cinstm DotNet4.0
+cinstm DotNet4.5
+cinstm mono
