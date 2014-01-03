@@ -54,3 +54,6 @@
     
     # VPN Client 
     # cinstm ShrewSoftVpn
+    
+    # Sql Server
+    cinst SqlServer2012Express
