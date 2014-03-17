@@ -24,7 +24,7 @@
     
     # Without Git, we might as well go home.
     cinstm poshgit
-    cinstm git-credential-winstore
+    cinstm git-credential-winstore -Version 1.2.0.0
 
     # Life sux without Visual Studio and the awesome extensions
     cinstm VisualStudio2012Professional
