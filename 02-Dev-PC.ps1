@@ -1,5 +1,7 @@
 # http://boxstarter.org/package/url?
 
+    # Screenshot tool
+    cinstm greenshot
 
     # It's nice to be able to browse NuGet files if necessary
     cinstm NugetPackageExplorer
