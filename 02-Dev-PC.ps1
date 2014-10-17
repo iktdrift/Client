@@ -14,7 +14,6 @@
     # Don't quite know why this is important, but I'll install silverlight and java runtime anyways
     cinstm Silverlight
     cinstm javaruntime
-    cinstm evernote
     
     # Gotta have Fiddler
     cinstm fiddler4
@@ -41,11 +40,7 @@
     }
 
     # VS related extras
-    cinstm resharper -Version 7.1.3000.2254 # I don't currently have a R# v.8 license.
-    Install-ChocolateyVsixPackage "vscommands" http://visualstudiogallery.msdn.microsoft.com/a83505c6-77b3-44a6-b53b-73d77cba84c8/file/74740/18/SquaredInfinity.VSCommands.VS11.vsix 11
-    Install-ChocolateyVsixPackage "NuGet Package Manager" http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c/file/37502/33/NuGet.Tools.vsix 11
-    Install-ChocolateyVsixPackage "Console Launcher" http://visualstudiogallery.msdn.microsoft.com/1460ab21-75be-49d0-900f-dfd538321424/file/54475/11/ConsoleLauncher.vsix 11
-    Install-ChocolateyVsixPackage "TextHighlighterExtension2012" http://visualstudiogallery.msdn.microsoft.com/fd129629-a1a1-417c-ac80-c9ac7a67b968/file/93334/9/TextHighlighterExtension2012.vsix 11
+    cinstm resharper
 
     # Fix SSH-Agent error by adding the bin directory to the `Path` environment variable
     $env:PSModulePath = $env:PSModulePath + ";C:\Program Files (x86)\Git\bin"
